@@ -71,7 +71,7 @@ source .venv/bin/activate   # Mac/Linux
 pip install -r requirements.txt
 
 ## 4. Setup environment variables/Configure API Key
-Create .env file and set your Gemini API KEY (GEMINI_API_KEY = your api key)
+    Create .env file and set your Gemini API KEY (GEMINI_API_KEY = your api key)
     GEMINI_API_KEY="API Key"
     GEMINI_MODEL=gemini-2.5-flash
     CHUNK_SIZE=1500
