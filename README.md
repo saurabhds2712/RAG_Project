@@ -37,24 +37,24 @@ A production-grade modular **Retrieval-Augmented Generation (RAG)** AI Assistant
         Response + Citations
 
 ## Project Structure
-RAG_Project/
-│
-├── app/
-│ ├── api/
-│ ├── ingestion/
-│ ├── retrieval/
-│ ├── llm/
-│ ├── prompts/
-│ ├── services/
-│ ├── utils/
-│ ├── config.py
-│ └── main.py
-│
-├── data/ # PDF documents
-├── vector_store/ # FAISS index storage
-├── .env
-├── requirements.txt
-└── README.md
+    RAG_Project/
+    │
+    ├── app/
+    │ ├── api/
+    │ ├── ingestion/
+    │ ├── retrieval/
+    │ ├── llm/
+    │ ├── prompts/
+    │ ├── services/
+    │ ├── utils/
+    │ ├── config.py
+    │ └── main.py
+    │
+    ├── data/ # PDF documents
+    ├── vector_store/ # FAISS index storage
+    ├── .env
+    ├── requirements.txt
+    └── README.md
 
 ## Setup Instructions
 
@@ -71,7 +71,18 @@ source .venv/bin/activate   # Mac/Linux
 pip install -r requirements.txt
 
 ## 4. Setup environment variables/Configure API Key
-Edit .env and set your Gemini API KEY (GEMINI_API_KEY = your api key)
+Create .env file and set your Gemini API KEY (GEMINI_API_KEY = your api key)
+    GEMINI_API_KEY="API Key"
+    GEMINI_MODEL=gemini-2.5-flash
+    CHUNK_SIZE=1500
+    CHUNK_OVERLAP=300
+    TOP_K=3
+    TEMPERATURE=0.2
+    TOP_P=0.9
+    MAX_OUTPUT_TOKENS=1024
+    DATA_DIR=data
+    VECTOR_DB_PATH=vector_store/faiss_index
+    EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
 
 ## 5. Add documents in data folder
 
@@ -88,30 +99,29 @@ POST /ask
 ## Sample Request and Response
 
 # Request:
-{
-  "question": "What are the optimizers used in deep learning"
-}
+    {
+    "question": "What are the optimizers used in deep learning"
+    }
 
 # Response:
 
-{
-  "answer": "Common optimization algorithms used in deep learning include:\n*   SGD\n*   Adam\n*   RMSProp",
-  "sources": [
     {
-      "document": "Deep_Learning_5_Page_Guide.pdf",
-      "page": 4
-    },
-    
-    {
-      "document": "Deep_Learning_5_Page_Guide.pdf",
-      "page": 2
-    },
-    {
-      "document": "Deep_Learning_5_Page_Guide.pdf",
-      "page": 3
+    "answer": "Common optimization algorithms used in deep learning include:\n*   SGD\n*   Adam\n*   RMSProp",
+    "sources": [
+        {
+        "document": "Deep_Learning_5_Page_Guide.pdf",
+        "page": 4
+        },
+        {
+        "document": "Deep_Learning_5_Page_Guide.pdf",
+        "page": 2
+        },
+        {
+        "document": "Deep_Learning_5_Page_Guide.pdf",
+        "page": 3
+        }
+    ]
     }
-  ]
-}
 
 
 
