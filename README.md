@@ -59,13 +59,13 @@ A production-grade modular **Retrieval-Augmented Generation (RAG)** AI Assistant
 ## Setup Instructions
 
 ## 1. Clone repository
-git clone <repo-url>
-cd RAG_Project
+    git clone https://github.com/saurabhds2712/RAG_Project.git
+    cd "RAG_Project"
 
 ## 2. Create virtual environment
-python -m venv .venv
-source .venv/bin/activate   # Mac/Linux
-.venv\Scripts\activate      # Windows
+    python -m venv .venv
+    source .venv/bin/activate   # Mac/Linux
+    .venv\Scripts\activate      # Windows
 
 ## 3. Install dependencies
 pip install -r requirements.txt
